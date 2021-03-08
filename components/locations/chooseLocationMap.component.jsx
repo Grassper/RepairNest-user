@@ -5,7 +5,7 @@ import { StyleSheet } from "react-native";
 // importing components
 import GreenMarker from "../markers/greenMarker.component";
 
-const ChooseLocationMap = () => {
+const ChooseLocationMap = ({ customstyles }) => {
   const [region, setRegion] = useState({
     latitude: 12.9515957,
     longitude: 80.1414093,
@@ -18,7 +18,7 @@ const ChooseLocationMap = () => {
   });
   return (
     <MapView
-      style={Styles.map}
+      style={{ ...Styles.map, ...customstyles }}
       region={region}
       onRegionChangeComplete={(region) => setRegion(region)}
     >

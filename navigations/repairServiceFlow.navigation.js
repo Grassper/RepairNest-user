@@ -10,14 +10,14 @@ import ConfirmMechanic from "../screens/confirmMechanic.maps.screen";
 
 const Stack = createStackNavigator();
 
-const StackNavigatorDefaultOptions = {
-  title: "",
-  headerTransparent: true,
-};
-
 const RepairServiceStackNavigation = () => {
   return (
-    <Stack.Navigator screenOptions={StackNavigatorDefaultOptions}>
+    <Stack.Navigator
+      screenOptions={{
+        title: "",
+        headerTransparent: true,
+      }}
+    >
       <Stack.Screen name="ChooseLocation" component={ChooseLocation} />
       <Stack.Screen name="ConfirmMechanic" component={ConfirmMechanic} />
     </Stack.Navigator>

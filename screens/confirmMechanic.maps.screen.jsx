@@ -6,11 +6,19 @@ import Colors from "../colors/default.colors";
 
 // importing components
 import ChooseLocationMap from "../components/locations/chooseLocationMap.component";
+import ConfirmMechanicCard from "../components/locations/confirmMechanicCard.component";
 
 const ConfirmMechanic = () => {
+  const ChooseLocationCustomStyle = {
+    height: "70%",
+  };
+  const ConfirmMechanicCardCustomStyle = {
+    height: "30%",
+  };
   return (
     <View style={Styles.container}>
-      <Text>Hello from confirm mechanic screen</Text>
+      <ChooseLocationMap customstyles={ChooseLocationCustomStyle} />
+      <ConfirmMechanicCard customstyles={ConfirmMechanicCardCustomStyle} />
     </View>
   );
 };
@@ -21,6 +29,5 @@ const Styles = StyleSheet.create({
   container: {
     alignItems: "center",
     flex: 1,
-    justifyContent: "center",
   },
 });

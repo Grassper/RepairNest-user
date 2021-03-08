@@ -4,6 +4,8 @@ const Colors = {
   borderColor: "#EFEFF4",
   black: "#000000",
   white: "#FFFFFF",
+  golden: "#FFCC00",
+  grey: "#C8C7CC",
 };
 
 export default Colors;

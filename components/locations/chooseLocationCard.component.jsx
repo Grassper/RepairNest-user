@@ -7,14 +7,18 @@ import Colors from "../../colors/default.colors";
 // importing icons
 import { EvilIcons } from "@expo/vector-icons";
 
+// importing components
+import Divider from "../divider.component";
+import CustomButton from "../customButton.component";
+
 // eslint-disable-next-line react/prop-types
-const ChooseLocationCard = ({ onSelect }) => {
+const ChooseLocationCard = ({ onSelect, customstyles }) => {
   return (
-    <View style={Styles.cardContainer}>
+    <View style={{ ...Styles.cardContainer, ...customstyles }}>
       <View style={Styles.cardHeaderContainer}>
         <Text style={Styles.header}>Select Repair Location</Text>
       </View>
-      <View style={Styles.divider}></View>
+      <Divider />
       <View style={Styles.contentContainer}>
         <Text style={Styles.locationTitle}>
           {"Your location".toUpperCase()}
@@ -38,10 +42,8 @@ const ChooseLocationCard = ({ onSelect }) => {
           </Text>
         </View>
       </View>
-      <View style={Styles.divider}></View>
-      <TouchableOpacity onPress={onSelect} style={Styles.Button}>
-        <Text style={Styles.buttonTitle}>Request Repair</Text>
-      </TouchableOpacity>
+      <Divider />
+      <CustomButton buttonTitle="Request Repair" onSelect={onSelect} />
     </View>
   );
 };
@@ -49,19 +51,6 @@ const ChooseLocationCard = ({ onSelect }) => {
 export default ChooseLocationCard;
 
 const Styles = StyleSheet.create({
-  Button: {
-    alignItems: "center",
-    backgroundColor: Colors.primaryColor,
-    borderRadius: 5,
-    justifyContent: "center",
-    paddingVertical: 10,
-    width: "100%",
-  },
-  buttonTitle: {
-    color: Colors.white,
-    fontFamily: "Montserrat_600SemiBold",
-    fontSize: 18,
-  },
   cardContainer: {
     backgroundColor: Colors.white,
     height: "30%",
@@ -75,11 +64,6 @@ const Styles = StyleSheet.create({
     color: Colors.primaryColor,
     fontFamily: "Montserrat_400Regular",
     fontSize: 14,
-  },
-  divider: {
-    borderColor: Colors.borderColor,
-    borderWidth: 0.5,
-    marginVertical: 15,
   },
   header: {
     fontFamily: "Montserrat_500Medium",
