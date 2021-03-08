@@ -18,8 +18,10 @@ import ChooseLocation from "./screens/chooseLocation.maps.screen";
 // importing colors
 import Colors from "./colors/default.colors";
 
-// loading fonts
+// importing navigator
+import NavContainer from "./navigations/repairServiceFlow.navigation";
 
+// loading fonts
 enableScreens();
 
 const App = () => {
@@ -37,7 +39,7 @@ const App = () => {
   return (
     <SafeAreaProvider>
       <View style={styles.container}>
-        <ChooseLocation />
+        <NavContainer />
       </View>
     </SafeAreaProvider>
   );
@@ -45,7 +47,6 @@ const App = () => {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: Colors.white,
     flex: 1,
   },
 });

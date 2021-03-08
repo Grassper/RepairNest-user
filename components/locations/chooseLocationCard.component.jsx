@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
 
 // importing colors
@@ -7,7 +7,8 @@ import Colors from "../../colors/default.colors";
 // importing icons
 import { EvilIcons } from "@expo/vector-icons";
 
-const ChooseLocationCard = () => {
+// eslint-disable-next-line react/prop-types
+const ChooseLocationCard = ({ onSelect }) => {
   return (
     <View style={Styles.cardContainer}>
       <View style={Styles.cardHeaderContainer}>
@@ -38,12 +39,7 @@ const ChooseLocationCard = () => {
         </View>
       </View>
       <View style={Styles.divider}></View>
-      <TouchableOpacity
-        onPress={() => {
-          console.log("request repair pressed");
-        }}
-        style={Styles.Button}
-      >
+      <TouchableOpacity onPress={onSelect} style={Styles.Button}>
         <Text style={Styles.buttonTitle}>Request Repair</Text>
       </TouchableOpacity>
     </View>
