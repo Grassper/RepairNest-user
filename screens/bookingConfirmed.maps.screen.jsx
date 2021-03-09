@@ -8,7 +8,7 @@ import Colors from "../colors/default.colors";
 import ChooseLocationMap from "../components/locations/chooseLocationMap.component";
 import MechanicCard from "../components/locations/mechanicCard.component";
 
-const ConfirmMechanic = ({ navigation }) => {
+const BookingConfirmed = () => {
   const ChooseLocationCustomStyle = {
     height: "70%",
   };
@@ -20,17 +20,14 @@ const ConfirmMechanic = ({ navigation }) => {
       <ChooseLocationMap customstyles={ChooseLocationCustomStyle} />
       <MechanicCard
         customstyles={MechanicCardCustomStyle}
-        buttonColor={Colors.primaryColor}
-        buttonTitle="Confirm Repair"
-        onSelect={() => {
-          navigation.navigate("BookingConfirmed");
-        }}
+        buttonColor={Colors.accentColor}
+        buttonTitle="Cancel Repair"
       />
     </View>
   );
 };
 
-export default ConfirmMechanic;
+export default BookingConfirmed;
 
 const Styles = StyleSheet.create({
   container: {

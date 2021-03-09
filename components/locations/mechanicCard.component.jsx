@@ -13,8 +13,10 @@ import { MaterialIcons } from "@expo/vector-icons";
 import Divider from "../divider.component";
 import CustomButton from "../customButton.component";
 
-// eslint-disable-next-line react/prop-types
-const ConfirmMechanicCard = ({ customstyles, onSelect }) => {
+const MechanicCard = ({ customstyles, onSelect, buttonTitle, buttonColor }) => {
+  const buttonCustomStyles = {
+    backgroundColor: buttonColor,
+  };
   return (
     <View style={{ ...Styles.container, ...customstyles }}>
       <View style={Styles.cardHeaderContainer}>
@@ -65,12 +67,16 @@ const ConfirmMechanicCard = ({ customstyles, onSelect }) => {
         </View>
       </View>
       <Divider />
-      <CustomButton buttonTitle="Confirm" onSelect={onSelect} />
+      <CustomButton
+        buttonTitle={buttonTitle}
+        customStyles={buttonCustomStyles}
+        onSelect={onSelect}
+      />
     </View>
   );
 };
 
-export default ConfirmMechanicCard;
+export default MechanicCard;
 
 const Styles = StyleSheet.create({
   cardHeaderContainer: {
