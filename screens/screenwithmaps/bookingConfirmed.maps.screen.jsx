@@ -1,14 +1,14 @@
 import React from "react";
-import { StyleSheet, View, Text } from "react-native";
+import { StyleSheet, View } from "react-native";
 
 // importing colors
-import Colors from "../colors/default.colors";
+import Colors from "../../colors/default.colors";
 
 // importing components
-import ChooseLocationMap from "../components/locations/chooseLocationMap.component";
-import MechanicCard from "../components/locations/mechanicCard.component";
+import ChooseLocationMap from "../../components/locations/chooseLocationMap.component";
+import ConfirmBookingMechanicCard from "../../components/locations/confirmBookingMechanicCard.component";
 
-const BookingConfirmed = () => {
+const BookingConfirmed = ({ navigation }) => {
   const ChooseLocationCustomStyle = {
     height: "70%",
   };
@@ -18,10 +18,10 @@ const BookingConfirmed = () => {
   return (
     <View style={Styles.container}>
       <ChooseLocationMap customstyles={ChooseLocationCustomStyle} />
-      <MechanicCard
+      <ConfirmBookingMechanicCard
         customstyles={MechanicCardCustomStyle}
-        buttonColor={Colors.accentColor}
-        buttonTitle="Cancel Repair"
+        onSelectArrived={() => navigation.navigate("CheckingVehicle")}
+        onSelectCancel={() => {}}
       />
     </View>
   );

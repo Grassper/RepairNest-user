@@ -12,12 +12,6 @@ import {
 
 import AppLoading from "expo-app-loading";
 
-// importing screens
-import ChooseLocation from "./screens/chooseLocation.maps.screen";
-
-// importing colors
-import Colors from "./colors/default.colors";
-
 // importing navigator
 import NavContainer from "./navigations/repairServiceFlow.navigation";
 

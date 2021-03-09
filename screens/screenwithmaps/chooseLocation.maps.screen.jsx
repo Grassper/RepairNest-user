@@ -2,11 +2,11 @@ import React from "react";
 import { StyleSheet, View } from "react-native";
 
 // importing colors
-import Colors from "../colors/default.colors";
+import Colors from "../../colors/default.colors";
 
 // importing components
-import ChooseLocationMap from "../components/locations/chooseLocationMap.component";
-import ChooseLocationCard from "../components/locations/chooseLocationCard.component";
+import ChooseLocationMap from "../../components/locations/chooseLocationMap.component";
+import ChooseLocationCard from "../../components/locations/chooseLocationCard.component";
 
 // eslint-disable-next-line react/prop-types
 const ChooseLocation = ({ navigation }) => {

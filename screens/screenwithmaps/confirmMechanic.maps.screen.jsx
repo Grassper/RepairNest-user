@@ -2,11 +2,11 @@ import React from "react";
 import { StyleSheet, View, Alert } from "react-native";
 
 // importing colors
-import Colors from "../colors/default.colors";
+import Colors from "../../colors/default.colors";
 
 // importing components
-import ChooseLocationMap from "../components/locations/chooseLocationMap.component";
-import MechanicCard from "../components/locations/mechanicCard.component";
+import ChooseLocationMap from "../../components/locations/chooseLocationMap.component";
+import MechanicCard from "../../components/locations/mechanicCard.component";
 
 const ConfirmMechanic = ({ navigation }) => {
   const BookingHandler = () =>
