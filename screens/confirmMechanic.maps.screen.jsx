@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, View, Text } from "react-native";
+import { StyleSheet, View, Alert } from "react-native";
 
 // importing colors
 import Colors from "../colors/default.colors";
@@ -9,6 +9,23 @@ import ChooseLocationMap from "../components/locations/chooseLocationMap.compone
 import MechanicCard from "../components/locations/mechanicCard.component";
 
 const ConfirmMechanic = ({ navigation }) => {
+  const BookingHandler = () =>
+    Alert.alert(
+      "Booking successful",
+      "Mechanic will here with you in 2 minutes.",
+      [
+        {
+          text: "Cancel",
+          onPress: () => console.log("cancel pressed"),
+          style: "cancel",
+        },
+        {
+          text: "Done",
+          onPress: () => navigation.navigate("BookingConfirmed"),
+        },
+      ],
+      { cancelable: false }
+    );
   const ChooseLocationCustomStyle = {
     height: "70%",
   };
@@ -23,7 +40,7 @@ const ConfirmMechanic = ({ navigation }) => {
         buttonColor={Colors.primaryColor}
         buttonTitle="Confirm Repair"
         onSelect={() => {
-          navigation.navigate("BookingConfirmed");
+          BookingHandler();
         }}
       />
     </View>
