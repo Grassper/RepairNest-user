@@ -24,7 +24,7 @@ const RepairServiceStackNavigation = () => {
         headerTintColor: Colors.accentColor,
         headerTitleAlign: "center",
         headerTitleStyle: {
-          fontFamily: "Montserrat_700Bold",
+          fontFamily: "Montserrat_600SemiBold",
         },
       }}
     >

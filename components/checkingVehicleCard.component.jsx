@@ -33,7 +33,7 @@ const CheckingVehicleCard = ({
           <Ionicons name="location-sharp" size={24} color={Colors.red} />
           <View>
             <Text style={Styles.locationText}>
-              {"New Colony, Chromepet chennai".substring(0, 30)}...
+              {"New Colony, Chromepet chennai".substring(0, 25)}...
             </Text>
           </View>
         </View>
@@ -57,6 +57,7 @@ const Styles = StyleSheet.create({
     elevation: 5,
     height: "30%",
     justifyContent: "space-evenly",
+    marginBottom: 20,
     padding: 20,
     width: "90%",
   },

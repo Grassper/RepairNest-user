@@ -53,15 +53,15 @@ const Styles = StyleSheet.create({
     width: "100%",
   },
   imageContainer: {
-    height: 270,
+    height: 235,
     marginTop: "35%",
-    width: 270,
+    width: 235,
   },
   indicatorContainer: {
     marginVertical: 20,
   },
   indicatorText: {
-    fontFamily: "Montserrat_600SemiBold",
+    fontFamily: "Montserrat_500Medium",
     fontSize: 18,
   },
   spinner: {
