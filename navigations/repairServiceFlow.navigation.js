@@ -1,5 +1,8 @@
 import React from "react";
 
+// importing colors
+import Colors from "../colors/default.colors";
+
 // importing navigators
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
@@ -18,12 +21,23 @@ const RepairServiceStackNavigation = () => {
       screenOptions={{
         title: "",
         headerTransparent: true,
+        headerTintColor: Colors.accentColor,
+        headerTitleAlign: "center",
+        headerTitleStyle: {
+          fontFamily: "Montserrat_700Bold",
+        },
       }}
     >
       <Stack.Screen name="ChooseLocation" component={ChooseLocation} />
       <Stack.Screen name="ConfirmMechanic" component={ConfirmMechanic} />
       <Stack.Screen name="BookingConfirmed" component={BookingConfirmed} />
-      <Stack.Screen name="CheckingVehicle" component={CheckingVehicle} />
+      <Stack.Screen
+        name="CheckingVehicle"
+        component={CheckingVehicle}
+        options={{
+          title: "Checking Vehicle",
+        }}
+      />
     </Stack.Navigator>
   );
 };

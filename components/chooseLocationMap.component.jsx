@@ -3,7 +3,7 @@ import MapView, { Marker } from "react-native-maps";
 import { StyleSheet } from "react-native";
 
 // importing components
-import GreenMarker from "../markers/greenMarker.component";
+import GreenMarker from "./greenMarker.component";
 
 const ChooseLocationMap = ({ customstyles }) => {
   const [region, setRegion] = useState({

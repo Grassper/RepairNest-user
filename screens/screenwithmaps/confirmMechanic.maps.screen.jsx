@@ -5,8 +5,8 @@ import { StyleSheet, View, Alert } from "react-native";
 import Colors from "../../colors/default.colors";
 
 // importing components
-import ChooseLocationMap from "../../components/locations/chooseLocationMap.component";
-import MechanicCard from "../../components/locations/mechanicCard.component";
+import ChooseLocationMap from "../../components/chooseLocationMap.component";
+import MechanicCard from "../../components/mechanicCard.component";
 
 const ConfirmMechanic = ({ navigation }) => {
   const BookingHandler = () =>

@@ -2,14 +2,14 @@ import React from "react";
 import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
 
 // importing colors
-import Colors from "../../colors/default.colors";
+import Colors from "../colors/default.colors";
 
 // importing icons
 import { EvilIcons } from "@expo/vector-icons";
 
 // importing components
-import Divider from "../divider.component";
-import CustomButton from "../customButton.component";
+import Divider from "./divider.component";
+import CustomButton from "./customButton.component";
 
 // eslint-disable-next-line react/prop-types
 const ChooseLocationCard = ({ onSelect, customstyles }) => {

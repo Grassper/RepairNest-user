@@ -2,7 +2,7 @@ import React from "react";
 import { StyleSheet, View } from "react-native";
 
 // importing colors
-import Colors from "../../colors/default.colors";
+import Colors from "../colors/default.colors";
 
 const GreenMarker = () => {
   return (
