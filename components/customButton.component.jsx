@@ -4,13 +4,20 @@ import { StyleSheet, TouchableOpacity, Text } from "react-native";
 // importing colors
 import Colors from "../colors/default.colors";
 
-const CustomButton = ({ buttonTitle, customStyles, onSelect }) => {
+const CustomButton = ({
+  buttonTitle,
+  buttonTitleStyle,
+  customStyles,
+  onSelect,
+}) => {
   return (
     <TouchableOpacity
       onPress={onSelect}
       style={{ ...Styles.Button, ...customStyles }}
     >
-      <Text style={Styles.buttonTitle}>{buttonTitle}</Text>
+      <Text style={{ ...Styles.buttonTitle, ...buttonTitleStyle }}>
+        {buttonTitle}
+      </Text>
     </TouchableOpacity>
   );
 };

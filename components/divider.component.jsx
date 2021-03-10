@@ -4,8 +4,8 @@ import { StyleSheet, View } from "react-native";
 // importing colors
 import Colors from "../colors/default.colors";
 
-const Divider = () => {
-  return <View style={Styles.divider}></View>;
+const Divider = ({ customStyles }) => {
+  return <View style={{ ...Styles.divider, ...customStyles }}></View>;
 };
 
 export default Divider;

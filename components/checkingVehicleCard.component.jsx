@@ -12,14 +12,12 @@ import MechanicProfile from "./mechanicProfile.component";
 import Divider from "./divider.component";
 import CustomButton from "./customButton.component";
 
-const CheckingVehicleCard = ({
-  customstyles,
-  buttonTitle,
-  buttonColor,
-  onSelect,
-}) => {
+const CheckingVehicleCard = ({ quote, customstyles, navigation }) => {
   const buttonCustomStyles = {
-    backgroundColor: buttonColor,
+    backgroundColor: quote ? Colors.primaryColor : Colors.accentColor,
+  };
+  const quoteHandler = () => {
+    navigation.navigate("QuoteScreen");
   };
   return (
     <View style={{ ...Styles.container, ...customstyles }}>
@@ -39,11 +37,19 @@ const CheckingVehicleCard = ({
         </View>
       </View>
       <Divider />
-      <CustomButton
-        buttonTitle={buttonTitle}
-        customStyles={buttonCustomStyles}
-        onSelect={onSelect}
-      />
+      {quote ? (
+        <CustomButton
+          buttonTitle="Get Quotes"
+          customStyles={buttonCustomStyles}
+          onSelect={quoteHandler}
+        />
+      ) : (
+        <CustomButton
+          buttonTitle="Cancel Repair"
+          customStyles={buttonCustomStyles}
+          onSelect={() => {}}
+        />
+      )}
     </View>
   );
 };

@@ -20,11 +20,18 @@ const ConfirmBookingMechanicCard = ({
 }) => {
   const buttonCustomSolidStyles = {
     backgroundColor: Colors.primaryColor,
+    borderWidth: 1,
+    borderColor: Colors.primaryColor,
     width: "45%",
   };
   const buttonCustomOutlineStyles = {
-    backgroundColor: Colors.accentColor,
+    backgroundColor: Colors.white,
+    borderWidth: 1,
+    borderColor: Colors.accentColor,
     width: "45%",
+  };
+  const buttonTitleStyle = {
+    color: Colors.accentColor,
   };
   return (
     <View style={{ ...Styles.container, ...customstyles }}>
@@ -36,6 +43,7 @@ const ConfirmBookingMechanicCard = ({
         <CustomButton
           buttonTitle="Cancel"
           customStyles={buttonCustomOutlineStyles}
+          buttonTitleStyle={buttonTitleStyle}
           onSelect={onSelectCancel}
         />
         <CustomButton

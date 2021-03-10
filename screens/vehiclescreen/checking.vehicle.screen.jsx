@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { View, StyleSheet, Image, ActivityIndicator, Text } from "react-native";
 
 // importing colors
@@ -7,7 +7,11 @@ import Colors from "../../colors/default.colors";
 // importing components
 import CheckingVehicleCard from "../../components/checkingVehicleCard.component";
 
-const CheckingVehicle = () => {
+// importing icons
+import { Ionicons } from "@expo/vector-icons";
+
+const CheckingVehicle = ({ navigation }) => {
+  const [quote, setQuote] = useState(true);
   return (
     <View style={Styles.container}>
       <View style={Styles.illustrationContainer}>
@@ -17,20 +21,28 @@ const CheckingVehicle = () => {
             source={require("../../assets/images/checkingVehicleImage.png")}
           />
         </View>
-        <View style={Styles.indicatorContainer}>
-          <ActivityIndicator
-            style={Styles.spinner}
-            size="large"
-            color={Colors.primaryColor}
-          />
-          <Text style={Styles.indicatorText}>Analysing your vehicle</Text>
-        </View>
+        {!quote ? (
+          <View style={Styles.indicatorContainer}>
+            <ActivityIndicator
+              style={Styles.spinner}
+              size="large"
+              color={Colors.primaryColor}
+            />
+            <Text style={Styles.indicatorText}>Analysing your vehicle</Text>
+          </View>
+        ) : (
+          <View style={Styles.indicatorContainer}>
+            <Ionicons
+              name="md-checkmark-circle"
+              size={30}
+              style={Styles.icon}
+              color={Colors.primaryColor}
+            />
+            <Text style={Styles.indicatorText}>Analysing Completed</Text>
+          </View>
+        )}
       </View>
-      <CheckingVehicleCard
-        buttonColor={Colors.accentColor}
-        buttonTitle="Cancel Repair"
-        onSelect={() => {}}
-      />
+      <CheckingVehicleCard quote={quote} navigation={navigation} />
     </View>
   );
 };
@@ -43,6 +55,9 @@ const Styles = StyleSheet.create({
     backgroundColor: Colors.white,
     flex: 1,
     justifyContent: "space-around",
+  },
+  icon: {
+    paddingBottom: 10,
   },
   illustrationContainer: {
     alignItems: "center",
@@ -58,6 +73,7 @@ const Styles = StyleSheet.create({
     width: 235,
   },
   indicatorContainer: {
+    alignItems: "center",
     marginVertical: 20,
   },
   indicatorText: {
