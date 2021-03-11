@@ -13,6 +13,7 @@ import ConfirmMechanic from "../screens/screenwithmaps/confirmMechanic.maps.scre
 import BookingConfirmed from "../screens/screenwithmaps/bookingConfirmed.maps.screen.jsx";
 import CheckingVehicle from "../screens/vehiclescreen/checking.vehicle.screen";
 import QuoteScreen from "../screens/vehiclescreen/quotes.vehicle.screen";
+import OrderStatus from "../screens/vehiclescreen/orderStatus.vehicle.screen";
 
 const Stack = createStackNavigator();
 
@@ -45,6 +46,13 @@ const RepairServiceStackNavigation = () => {
         options={{
           title: "Order Details",
           headerTintColor: Colors.white,
+        }}
+      />
+      <Stack.Screen
+        name="OrderStatus"
+        component={OrderStatus}
+        options={{
+          title: "Order Status",
         }}
       />
     </Stack.Navigator>

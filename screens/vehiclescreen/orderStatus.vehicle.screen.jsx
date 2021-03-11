@@ -1,5 +1,15 @@
 import React, { useState } from "react";
-import { View, StyleSheet, Image, ActivityIndicator, Text } from "react-native";
+import {
+  View,
+  StyleSheet,
+  Image,
+  ActivityIndicator,
+  Text,
+  Dimensions,
+} from "react-native";
+
+const windowWidth = Dimensions.get("window").width;
+const windowHeight = Dimensions.get("window").height;
 
 // importing colors
 import Colors from "../../colors/default.colors";
@@ -10,25 +20,25 @@ import CheckingVehicleCard from "../../components/checkingVehicleCard.component"
 // importing icons
 import { Ionicons } from "@expo/vector-icons";
 
-const CheckingVehicle = ({ navigation }) => {
-  const [quote, setQuote] = useState(true);
+const OrderStatus = ({ navigation }) => {
+  const [completed, setCompleted] = useState(false);
   return (
     <View style={Styles.container}>
       <View style={Styles.illustrationContainer}>
         <View style={Styles.imageContainer}>
           <Image
             style={Styles.image}
-            source={require("../../assets/images/checkingVehicleImage.png")}
+            source={require("../../assets/images/repairingImage.png")}
           />
         </View>
-        {!quote ? (
+        {!completed ? (
           <View style={Styles.indicatorContainer}>
             <ActivityIndicator
               style={Styles.spinner}
               size="large"
               color={Colors.primaryColor}
             />
-            <Text style={Styles.indicatorText}>Analysing your vehicle</Text>
+            <Text style={Styles.indicatorText}>Repairing your vehicle</Text>
           </View>
         ) : (
           <View style={Styles.indicatorContainer}>
@@ -38,20 +48,18 @@ const CheckingVehicle = ({ navigation }) => {
               style={Styles.icon}
               color={Colors.primaryColor}
             />
-            <Text style={Styles.indicatorText}>Analysing Completed</Text>
+            <Text style={Styles.indicatorText}>Repairing Completed</Text>
           </View>
         )}
       </View>
       <CheckingVehicleCard
-        buttonState={quote}
+        buttonState={completed}
         buttonPropStateTrue={{
-          title: "Get Quote",
-          onSelect: () => {
-            navigation.navigate("QuoteScreen");
-          },
+          title: "Submit a Review",
+          onSelect: () => {},
         }}
         buttonPropStateFalse={{
-          title: "Cancel Repair",
+          title: "Back To Homescreen",
           onSelect: () => {
             navigation.navigate("ChooseLocation");
           },
@@ -61,7 +69,7 @@ const CheckingVehicle = ({ navigation }) => {
   );
 };
 
-export default CheckingVehicle;
+export default OrderStatus;
 
 const Styles = StyleSheet.create({
   container: {
@@ -82,13 +90,14 @@ const Styles = StyleSheet.create({
     width: "100%",
   },
   imageContainer: {
-    height: 235,
+    height: windowHeight * 0.4,
     marginTop: "35%",
-    width: 235,
+    padding: 20,
+    width: windowWidth * 0.95,
   },
   indicatorContainer: {
     alignItems: "center",
-    marginVertical: 20,
+    marginVertical: 5,
   },
   indicatorText: {
     fontFamily: "Montserrat_500Medium",

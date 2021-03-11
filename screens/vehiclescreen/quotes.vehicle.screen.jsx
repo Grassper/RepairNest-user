@@ -8,7 +8,7 @@ import Colors from "../../colors/default.colors";
 import Divider from "../../components/divider.component";
 import CustomButton from "../../components/customButton.component";
 
-const QuoteScreen = () => {
+const QuoteScreen = ({ navigation }) => {
   const CustomDividerStyle = {
     borderColor: Colors.white,
     marginVertical: 10,
@@ -65,7 +65,9 @@ const QuoteScreen = () => {
           <CustomButton
             buttonTitle="Accept"
             customStyles={buttonCustomSolidStyles}
-            onSelect={() => {}}
+            onSelect={() => {
+              navigation.navigate("OrderStatus");
+            }}
           />
         </View>
       </View>
