@@ -21,7 +21,7 @@ import CheckingVehicleCard from "../../components/checkingVehicleCard.component"
 import { Ionicons } from "@expo/vector-icons";
 
 const OrderStatus = ({ navigation }) => {
-  const [completed, setCompleted] = useState(false);
+  const [completed, setCompleted] = useState(true);
   return (
     <View style={Styles.container}>
       <View style={Styles.illustrationContainer}>
@@ -56,7 +56,9 @@ const OrderStatus = ({ navigation }) => {
         buttonState={completed}
         buttonPropStateTrue={{
           title: "Submit a Review",
-          onSelect: () => {},
+          onSelect: () => {
+            navigation.navigate("RateYourMechanic");
+          },
         }}
         buttonPropStateFalse={{
           title: "Back To Homescreen",
