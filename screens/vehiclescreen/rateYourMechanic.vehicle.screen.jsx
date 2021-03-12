@@ -6,13 +6,17 @@ import Colors from "../../colors/default.colors";
 
 // importing components
 import CustomButton from "../../components/customButton.component";
-import Divider from "../../components/divider.component";
 
 // importing icons
 import { AntDesign } from "@expo/vector-icons";
 
-const RateYourMechanic = () => {
+const RateYourMechanic = ({ navigation }) => {
   const [text, setText] = useState("");
+  const [icon1State, seticon1State] = useState(false);
+  const [icon2State, seticon2State] = useState(false);
+  const [icon3State, seticon3State] = useState(false);
+  const [icon4State, seticon4State] = useState(false);
+  const [icon5State, seticon5State] = useState(false);
   const buttonCustomSolidStyles = {
     backgroundColor: Colors.primaryColor,
     borderWidth: 1,
@@ -38,11 +42,36 @@ const RateYourMechanic = () => {
           Your feedback will help improve repair experience
         </Text>
         <View style={Styles.stars}>
-          <AntDesign name="star" size={44} color={Colors.borderColor} />
-          <AntDesign name="star" size={44} color={Colors.borderColor} />
-          <AntDesign name="star" size={44} color={Colors.borderColor} />
-          <AntDesign name="star" size={44} color={Colors.borderColor} />
-          <AntDesign name="star" size={44} color={Colors.borderColor} />
+          <AntDesign
+            name="star"
+            size={44}
+            color={icon1State ? Colors.golden : Colors.borderColor}
+            onPress={() => seticon1State(!icon1State)}
+          />
+          <AntDesign
+            name="star"
+            size={44}
+            color={icon2State ? Colors.golden : Colors.borderColor}
+            onPress={() => seticon2State(!icon2State)}
+          />
+          <AntDesign
+            name="star"
+            size={44}
+            color={icon3State ? Colors.golden : Colors.borderColor}
+            onPress={() => seticon3State(!icon3State)}
+          />
+          <AntDesign
+            name="star"
+            size={44}
+            color={icon4State ? Colors.golden : Colors.borderColor}
+            onPress={() => seticon4State(!icon4State)}
+          />
+          <AntDesign
+            name="star"
+            size={44}
+            color={icon5State ? Colors.golden : Colors.borderColor}
+            onPress={() => seticon5State(!icon5State)}
+          />
         </View>
         <TextInput
           multiline={true}
@@ -57,7 +86,7 @@ const RateYourMechanic = () => {
         <CustomButton
           buttonTitle="Submit Review"
           customStyles={buttonCustomSolidStyles}
-          onSelect={() => {}}
+          onSelect={() => navigation.navigate("RepairCompleted")}
         />
       </View>
     </View>
@@ -72,10 +101,9 @@ const Styles = StyleSheet.create({
     backgroundColor: Colors.white,
     borderRadius: 10,
     elevation: 3,
-    height: 500,
-    justifyContent: "center",
-    justifyContent: "space-around",
-    marginBottom: "10%",
+    height: "60%",
+    justifyContent: "space-evenly",
+    minHeight: 500,
     padding: 20,
     width: "90%",
   },
@@ -84,7 +112,7 @@ const Styles = StyleSheet.create({
     alignItems: "center",
     backgroundColor: Colors.primaryColor,
     flex: 1,
-    justifyContent: "flex-end",
+    justifyContent: "center",
   },
   heading: {
     fontFamily: "Montserrat_700Bold",
