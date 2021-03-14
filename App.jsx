@@ -1,23 +1,48 @@
 import React from "react";
 import { StyleSheet, View } from "react-native";
+import { SafeAreaProvider } from "react-native-safe-area-context";
+import { enableScreens } from "react-native-screens";
+import {
+  useFonts,
+  Montserrat_400Regular,
+  Montserrat_500Medium,
+  Montserrat_600SemiBold,
+  Montserrat_700Bold,
+} from "@expo-google-fonts/montserrat";
 
-// importing screens
-import ChooseLocation from "./screens/chooseLocation.maps.screen";
+import AppLoading from "expo-app-loading";
 
-// importing colors
-import Colors from "./colors/default.colors";
+// importing navigator
+import NavContainer from "./navigations/repairServiceFlow.navigation";
 
-export default function App() {
+// loading fonts
+enableScreens();
+
+const App = () => {
+  let [fontsLoaded] = useFonts({
+    Montserrat_400Regular,
+    Montserrat_500Medium,
+    Montserrat_600SemiBold,
+    Montserrat_700Bold,
+  });
+
+  if (!fontsLoaded) {
+    return <AppLoading />;
+  }
+
   return (
-    <View style={styles.container}>
-      <ChooseLocation />
-    </View>
+    <SafeAreaProvider>
+      <View style={styles.container}>
+        <NavContainer />
+      </View>
+    </SafeAreaProvider>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: Colors.white,
     flex: 1,
   },
 });
+
+export default App;
